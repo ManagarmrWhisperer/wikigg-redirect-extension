@@ -6,6 +6,7 @@ const scripts = {
     popup: {},
     google: { isContentScript: true },
     ddg: { isContentScript: true },
+    bing: { isContentScript: true },
     fandom: { isContentScript: true },
 };
 const release = process.env.NODE_ENV === 'release';

@@ -66,6 +66,15 @@
             ],
             "run_at": "document_end"
         },
+	{
+            "matches": [
+                "https://*.bing.com/*"
+            ],
+            "js": [
+                "built/bing.js"
+            ],
+            "run_at": "document_end"
+        },
         {
             "matches": [
                 "https://*.fandom.com/*"

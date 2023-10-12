@@ -99,8 +99,9 @@ export function prepareWikisInfo( wikis, options ) {
             if ( !wiki.search.titlePattern ) {
                 const escapedName = ( wiki.search.oldName || wiki.name ).replace( /[.*+?^${}()|[\]\\]/g, '\\$&' );
                 // eslint-disable-next-line security/detect-non-literal-regexp
-                wiki.search.titlePattern = new RegExp( `(Official )?${escapedName} (\\| |- )?(Wiki|Fandom)( (-|\\|) Fandom)?$`,
-                    'i' );
+                wiki.search.titlePattern = new RegExp( `(Official )?(${escapedName})? (\\| |- )?(Wiki|Fandom)( (-|\\|) Fandom)?`, 'i' );
+
+                wiki.search.bingTitlePattern = new RegExp( /((Acepedia \| )?)(Wiki .+(?!\|))?(Fandom)/ );
             }
             if ( !wiki.search.placeholderTitle ) {
                 wiki.search.placeholderTitle = `${wiki.search.oldName || wiki.name} Fandom`;
